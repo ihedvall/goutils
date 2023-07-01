@@ -80,14 +80,19 @@ func TestFileLogger(t *testing.T) {
 		msg := NewLogMessage(Info, temp)
 		lc.AddLogMessage(msg)
 	}
-	showLogFile := lc.ShowLogFile()
-	if !showLogFile {
-		t.Error("Failed to open the log file")
-	}
+
 	lc.Start()
 	for timeout := 0; timeout < 1000 && !lc.IsEmpty(); timeout++ {
 		time.Sleep(time.Millisecond)
 	}
+	time.Sleep(time.Second * 2) // Let the files be written
+	errLogFile := lc.ShowLogFile()
+	if errLogFile != nil {
+		t.Errorf("Failed to open the log file. Error: %s", errLogFile.Error())
+	}
+
 	lc.Stop()
 	lc.Clear()
+	// Wait before file is deleted by the go testing framework
+	time.Sleep(time.Second)
 }

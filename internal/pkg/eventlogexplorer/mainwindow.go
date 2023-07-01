@@ -129,7 +129,7 @@ func NewMainWindow(application fyne.App) fyne.Window {
 	main := application.NewWindow("Event Log Explorer")
 	mainWindowInstance = &MainWindow{Application: &application, MainWin: &main}
 	main.SetMainMenu(CreateMainMenu())
-	listContainer := container.NewMax(makeList())
+	listContainer := container.NewStack(makeList())
 
 	mainContainer := container.NewBorder(nil, makeText(), nil, nil)
 	mainContainer.Add(listContainer)
@@ -155,7 +155,7 @@ func NewMainWindow(application fyne.App) fyne.Window {
 
 func OnShowLogFile() {
 	lc := logchain.GetLogChain()
-	lc.ShowLogFile()
+	_ = lc.ShowLogFile()
 }
 
 func OnDisableLogFile() bool {

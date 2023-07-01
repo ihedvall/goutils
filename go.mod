@@ -2,7 +2,12 @@ module goutils
 
 go 1.20
 
-require fyne.io/fyne/v2 v2.3.6-0.20230620193502-28dc6f14f62e
+require (
+	fyne.io/fyne/v2 v2.3.6-0.20230620193502-28dc6f14f62e
+	fyne.io/x/fyne v0.0.0-20230611151101-afdcd6b92cf3
+	google.golang.org/grpc v1.38.0
+	google.golang.org/protobuf v1.26.0
+)
 
 require (
 	fyne.io/systray v1.10.1-0.20230602210930-b6a2d6ca2a7b // indirect
@@ -17,8 +22,10 @@ require (
 	github.com/go-text/render v0.0.0-20230327192424-adef04305ec0 // indirect
 	github.com/go-text/typesetting v0.0.0-20230405155246-bf9c697c6e16 // indirect
 	github.com/godbus/dbus/v5 v5.1.0 // indirect
+	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/gopherjs/gopherjs v1.17.2 // indirect
 	github.com/jsummers/gobmp v0.0.0-20151104160322-e2ba15ffa76e // indirect
+	github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/srwiley/oksvg v0.0.0-20220731023508-a61f04f16b76 // indirect
 	github.com/srwiley/rasterx v0.0.0-20220730225603-2ab79fcdd4ef // indirect
@@ -30,6 +37,7 @@ require (
 	golang.org/x/net v0.9.0 // indirect
 	golang.org/x/sys v0.8.0 // indirect
 	golang.org/x/text v0.9.0 // indirect
+	google.golang.org/genproto v0.0.0-20210602131652-f16073e35f0c // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	honnef.co/go/js/dom v0.0.0-20210725211120-f030747120f2 // indirect
 )
